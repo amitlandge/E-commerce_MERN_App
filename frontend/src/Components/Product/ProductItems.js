@@ -23,9 +23,17 @@ const ProductItems = ({
 
   return (
     <Link className="product-cart" to={`/product/${id}`}>
-      <Card sx={{ maxWidth: 320 }}>
+      <Card className="product-flex"
+        sx={{
+          maxWidth: 320,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <CardMedia
-          sx={{ height: 150, width: 100 }}
+          sx={{ height: 200, width: 150 }}
           image={image[0].url}
           title="green iguana"
         />

@@ -21,7 +21,7 @@ const UpdateProduct = () => {
   const params = useParams();
   const { product } = useSelector((state) => state.productDetails);
   const { success, loading } = useSelector((state) => state.updateProduct);
-  const categories = ["Laptop", "Electronic", "Accessaries"];
+  const categories = ["Mobile", "Electronic", "Accessories", "Other"];
   const [name, setName] = useState();
   const [description, setDescription] = useState();
   const [price, setPrice] = useState();

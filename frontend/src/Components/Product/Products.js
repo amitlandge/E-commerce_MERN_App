@@ -13,7 +13,7 @@ import Box from "@mui/material/Box";
 import { List } from "@mui/material";
 import NoProducts from "../Layout/NoProducts";
 
-const CategoryArray = ["Laptop", "Mobile", "Ipad", "Computer", "Watch"];
+const CategoryArray = ["Mobile", "Electronic", "Accessories", "Other"];
 const Products = () => {
   const [category, setCategory] = useState("");
   const [rating, setRatings] = useState(0);

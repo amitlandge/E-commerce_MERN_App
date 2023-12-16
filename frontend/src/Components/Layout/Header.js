@@ -131,11 +131,34 @@ function Header() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.name}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "black",
+                    display: "block",
+                  }}
+                  to="/"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
+                  Home
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "black",
+                    display: "block",
+                  }}
+                  to="/products"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
+                  Products
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -157,29 +180,47 @@ function Header() {
             E-Commerce
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+              }}
+            >
+              <Link
+                onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
                   color: "white",
                   display: "block",
                 }}
+                to="/"
+                style={{ color: "white", textDecoration: "none" }}
               >
-                <Link
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                  }}
-                  to={`/${page.url}`}
-                  style={{ color: "white", textDecoration: "none" }}
-                >
-                  {page.name}
-                </Link>
-              </Button>
-            ))}
+                Home
+              </Link>
+            </Button>
+
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+              }}
+            >
+              <Link
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
+                to="/products"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                Products
+              </Link>
+            </Button>
           </Box>
 
           <Link to="product/search" className="search">

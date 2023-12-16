@@ -38,8 +38,15 @@
   width: 3vmax;
   padding-left: 1vmax !important;
   border: none !important;
- 
 }
 .amount:focus {
   border: none !important;
+}
+@media only screen and (max-width: 700px) {
+  .cart-flex {
+    width: 80vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

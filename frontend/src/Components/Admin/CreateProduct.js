@@ -18,7 +18,7 @@ const CreateProduct = () => {
   const { error, loading, success } = useSelector(
     (state) => state.createProduct
   );
-  const categories = ["Laptop", "Electronic", "Accessaries"];
+  const categories = ["Mobile", "Electronic", "Accessories", "Other"];
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState();

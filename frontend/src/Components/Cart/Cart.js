@@ -50,7 +50,7 @@ const Cart = () => {
             {cartItems &&
               cartItems.map((item) => {
                 return (
-                  <Card
+                  <Card className="cart-flex"
                     sx={{
                       display: "flex",
                       alignItems: "center",

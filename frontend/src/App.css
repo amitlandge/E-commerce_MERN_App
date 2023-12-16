@@ -91,6 +91,9 @@ h2 {
 h3 {
   font-size: 1.5vmax;
 }
+p {
+  font-size: 1vmax;
+}
 
 @media screen and (max-width: 650px) {
   .res-bar {

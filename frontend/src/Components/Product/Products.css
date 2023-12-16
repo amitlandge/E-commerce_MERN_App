@@ -29,6 +29,18 @@
   width: 20vmax;
   padding: 2vmax;
 }
+@media only screen and (max-width: 700px) {
+  .product-main-container {
+    display: flex;
+
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-flex {
+    width: 150%;
+  }
+}
 
 @media only screen and (max-width: 1000px) {
   .product-container {

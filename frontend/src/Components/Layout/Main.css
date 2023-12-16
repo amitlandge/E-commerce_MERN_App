@@ -12,7 +12,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-size: 100%;
- 
 }
 .heading-main {
   font-family: "Signika Negative", sans-serif;
@@ -24,8 +23,4 @@
   width: 60%;
   padding: 10% 5%;
 }
-@media screen and (max-width: 600px) {
-  .main-page {
-    height: 30vmax;
-  }
-}
+
