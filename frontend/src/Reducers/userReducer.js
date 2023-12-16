@@ -12,7 +12,7 @@ import {
   REGISTER_FAIL,
   REGISTER_PROCESS,
   REGISTER_SUCCESS,
-  // LOAD_USER_PROCESS,
+  LOAD_USER_PROCESS,
   LOAD_USER_SUCCESS,
   LOAD_USER_FAIL,
   LOGOUT_USER,
@@ -51,9 +51,9 @@ export const userLoginRegister = (state = { user: {} }, action) => {
   switch (action.type) {
     case LOGIN_PROCESS:
     case REGISTER_PROCESS:
-    // case LOAD_USER_PROCESS:
+    case LOAD_USER_PROCESS:
       return {
-        loading: true,
+        loading: false,
         isAuthenticated: false,
       };
     case LOGIN_SUCCESS:
