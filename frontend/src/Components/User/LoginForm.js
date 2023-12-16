@@ -6,13 +6,13 @@ import { clearErrors, loginUser } from "../../Actions/userActions";
 import { toast } from "react-toastify";
 import TextField from "@mui/material/TextField";
 
-import Loader from "../Layout/Loader";
-import {  Button } from "@mui/material";
+
+import { Button } from "@mui/material";
 const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { error, loading, isAuthenticated } = useSelector(
+  const { error, isAuthenticated } = useSelector(
     (state) => state.userLoginRegister
   );
   const [validation, setValidation] = useState({
@@ -52,58 +52,54 @@ const LoginForm = () => {
   }, [dispatch, error, isAuthenticated, navigate]);
   return (
     <Fragment>
-      {loading ? (
-        <Loader />
-      ) : (
-        <form onSubmit={submitUserData} className="form">
-          <h1> User Login</h1>
+      <form onSubmit={submitUserData} className="form">
+        <h1> User Login</h1>
 
-          <div
-            className={
-              validation.email && submit ? "email-field" : "email-field invalid"
-            }
-          >
-            <TextField
-              id="outlined-basic"
-              label="Email"
-              variant="outlined"
-              value={email}
-              type="email"
-              sx={{ background: "white", width: "30vmax" }}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-            <span>Please Enter Your Email</span>
-          </div>
-          <div
-            className={
-              validation.password && submit
-                ? "password-field"
-                : "password-field invalid"
-            }
-          >
-            <TextField
-              id="outlined-basic"
-              label="Password"
-              variant="outlined"
-              value={password}
-              type="password"
-              sx={{ background: "white", width: "30vmax" }}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-            <span>Password must be above 8 Character</span>
-          </div>
-          <Link className="forgot-password" to="/auth/forgot/password">
-            Forgot Password
-          </Link>
-          <Button variant="contained" type="submit">
-            Submit
-          </Button>
-        </form>
-      )}
+        <div
+          className={
+            validation.email && submit ? "email-field" : "email-field invalid"
+          }
+        >
+          <TextField
+            id="outlined-basic"
+            label="Email"
+            variant="outlined"
+            value={email}
+            type="email"
+            sx={{ background: "white", width: "30vmax" }}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <span>Please Enter Your Email</span>
+        </div>
+        <div
+          className={
+            validation.password && submit
+              ? "password-field"
+              : "password-field invalid"
+          }
+        >
+          <TextField
+            id="outlined-basic"
+            label="Password"
+            variant="outlined"
+            value={password}
+            type="password"
+            sx={{ background: "white", width: "30vmax" }}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          <span>Password must be above 8 Character</span>
+        </div>
+        <Link className="forgot-password" to="/auth/forgot/password">
+          Forgot Password
+        </Link>
+        <Button variant="contained" type="submit">
+          Submit
+        </Button>
+      </form>
     </Fragment>
   );
 };
