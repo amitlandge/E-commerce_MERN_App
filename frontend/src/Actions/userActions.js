@@ -7,7 +7,7 @@ import {
   REGISTER_PROCESS,
   REGISTER_SUCCESS,
   CLEAR_ERROR,
-  LOAD_USER_PROCESS,
+  // LOAD_USER_PROCESS,
   LOAD_USER_SUCCESS,
   LOAD_USER_FAIL,
   LOGOUT_USER,
@@ -64,7 +64,7 @@ export const registerUser = (formData) => async (dispatch) => {
 
 export const loadUser = () => async (dispatch) => {
   try {
-    dispatch({ type: LOAD_USER_PROCESS });
+    // dispatch({ type: LOAD_USER_PROCESS });
     const res = await axios.get("/api/v1/me");
     console.log(res);
     dispatch({ type: LOAD_USER_SUCCESS, payload: res.data });
