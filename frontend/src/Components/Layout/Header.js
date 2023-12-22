@@ -19,26 +19,9 @@ import { clearErrors, logOutUser } from "../../Actions/userActions";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
-// const pages = ["Home", "Products", "About us", "Contact Us"];
 
-const pages = [
-  {
-    name: "Home",
-    url: "",
-  },
-  {
-    name: "Products",
-    url: "products",
-  },
-  {
-    name: "About Us",
-    url: "aboutus",
-  },
-  {
-    name: "Contact Us",
-    url: "contactus",
-  },
-];
+
+
 function Header() {
   const dispatch = useDispatch();
   const { isAuthenticated, error, user } = useSelector(

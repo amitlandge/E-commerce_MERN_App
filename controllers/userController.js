@@ -97,7 +97,10 @@ const forgotPassword = async (req, res) => {
     const token = await user.getResetToken();
     console.log(token);
     await user.save({ validateBeforeSave: true });
-    const generateLinkToSend = `${req.protocol}://192.168.0.114:3000/password/reset/${token}`;
+
+    const generateLinkToSend = `${req.protocol}://${req.get(
+      "host"
+    )}/password/reset/${token}`;
     const message = `Your password reset token is :- \n\n ${generateLinkToSend} \n\nIf you have not requested this email then, please ignore it.`;
 
     try {

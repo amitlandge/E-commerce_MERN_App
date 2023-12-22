@@ -53,7 +53,7 @@ export const userLoginRegister = (state = { user: {} }, action) => {
     case REGISTER_PROCESS:
     case LOAD_USER_PROCESS:
       return {
-        loading: false,
+        loading: true,
         isAuthenticated: false,
       };
     case LOGIN_SUCCESS:
