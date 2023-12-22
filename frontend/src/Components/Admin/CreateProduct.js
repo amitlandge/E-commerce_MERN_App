@@ -136,14 +136,7 @@ const CreateProduct = () => {
                 />
               </div>
               <div>
-                {/* <input
-                  type="file"
-                  placeholder="Choose Files"
-                  multiple={true}
-                  onChange={(e) => {
-                    setImages(Array.from(e.target.files));
-                  }}
-                /> */}
+                
 
                 <Button
                   component="label"

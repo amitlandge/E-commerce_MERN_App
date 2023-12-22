@@ -54,7 +54,7 @@ const SignUpForm = () => {
       formData.append("email", email);
       formData.append("password", password);
       formData.append("image", image);
-      // alert("Form Succesfully Submited");
+      
       dispatch(registerUser(formData));
     }
   };

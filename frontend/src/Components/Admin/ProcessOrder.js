@@ -88,7 +88,7 @@ const ProcessOrder = () => {
               <span>
                 <b>Status</b>:<br></br>
                 {order.paymentInfo?.status === "succeeded" ? (
-                  // <p style={{ color: "green" }}>Paid</p>
+                  
 
                   <Button
                     variant="contained"

@@ -10,7 +10,7 @@ const fileUpload = require("express-fileupload");
 const bodyParser = require("body-parser");
 const db = require("./Database/db");
 const cookieParser = require("cookie-parser");
-const errorMiddleware = require("./middleware/error");
+
 // Database Connection
 if (process.env.NODE_PRODUCTION !== "PRODUCTION") {
   require("dotenv").config();

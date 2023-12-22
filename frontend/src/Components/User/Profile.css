@@ -40,14 +40,7 @@
   color: aliceblue;
   text-decoration: none;
 }
-/* .profile-btn > a {
-  padding: 0.6vmax 1vmax;
-  background-color: gray;
-  border-radius: 3px;
-  color: aliceblue;
-  font-size: 1.2vmax;
-  cursor: pointer;
-} */
+
 .profile-btn > button > a {
   color: aliceblue;
   text-decoration: none;

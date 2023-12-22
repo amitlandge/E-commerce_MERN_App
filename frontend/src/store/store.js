@@ -12,6 +12,7 @@ import {
   deleteProductReducer,
 } from "../Reducers/productReducer";
 import {
+  contactUsReducer,
   deleteReviewReducer,
   deleteUserReducer,
   forgotPasswordReducer,
@@ -52,7 +53,8 @@ const reducerFun = combineReducers({
   getSingleUser: getSingleUserReducer,
   updateUserRole: updateUserStatusReducer,
   deleteUser: deleteUserReducer,
-  deleteReview:deleteReviewReducer
+  deleteReview: deleteReviewReducer,
+  contactus: contactUsReducer,
 });
 
 const middleware = [thunk];

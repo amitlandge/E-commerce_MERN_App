@@ -52,10 +52,7 @@ input::-webkit-inner-spin-button {
   width: 80vw;
   margin: 2% auto;
 }
-/* .progress{
-  display: flex;
-  flex-direction: column;
-} */
+
 .paymentSuccess {
   width: 100%;
   height: 60vh;

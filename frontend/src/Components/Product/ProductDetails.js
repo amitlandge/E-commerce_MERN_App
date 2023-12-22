@@ -32,7 +32,7 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const params = useParams();
   const { product } = useSelector((state) => state.productDetails);
-  const { cartItems } = useSelector((state) => state.cart);
+
   const [open, setOpen] = React.useState(false);
   const { isAuthenticated, user } = useSelector(
     (state) => state.userLoginRegister
@@ -44,12 +44,12 @@ const ProductDetails = () => {
   );
   const [ratings, setRatings] = useState(0);
   const [review, setReview] = useState("");
-  console.log(product);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductDetails(params.id));
   }, [dispatch, params.id]);
-  console.log(product.image);
+
   const addQuantityHandler = () => {
     if (quantity < product.stock) {
       setQuantity(quantity + 1);
@@ -64,7 +64,6 @@ const ProductDetails = () => {
     dispatch(addToCartAction(product._id, +quantity));
     toast.success("Added Item Successfully");
   };
-  console.log(cartItems);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -113,7 +112,6 @@ const ProductDetails = () => {
       <div className="productDetails-container">
         <div className="left-container">
           <div className="image-container">
-            {/* <img alt="p1" src={product.image[0].url} className="product-image" /> */}
             <Carousel>
               {product.image &&
                 product.image.map((item, i) => (
@@ -160,13 +158,6 @@ const ProductDetails = () => {
               <button onClick={addQuantityHandler}>+</button>
             </div>
             {product.stock && isAuthenticated > 0 ? (
-              // <button
-              //   className="cartBtn"
-              //   type="button"
-              //   onClick={addToCartHandler}
-              // >
-              //   Add To Cart
-              // </button>
               <Button
                 variant="contained"
                 onClick={addToCartHandler}

@@ -1,16 +1,14 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Sometype+Mono:ital@0;1&display=swap"); */
-
 .form {
   width: 40vmax;
-  /* height: 70vh; */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5vmax;
-  /* background-color: #6394c5; */
+
   margin: 3% auto;
-  /* color: aliceblue; */
+
   border-radius: 1vmax;
   padding: 2vmax 0vmax;
   font-family: "Sometype Mono", monospace;
@@ -22,7 +20,7 @@ form div {
 }
 form > div > input {
   width: 30vmax;
-  /* padding: 0.8vmax 2vmax; */
+
   padding-left: 5vmax;
   border: none;
   border-radius: 0.2vmax;

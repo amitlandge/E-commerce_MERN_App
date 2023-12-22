@@ -89,13 +89,13 @@ const logout = async (req, res) => {
 const forgotPassword = async (req, res) => {
   try {
     const { email } = req.body;
-    console.log(email);
+   
     let user = await User.findOne({ email });
     if (!user) {
       throw new Error("User Not Exist");
     }
     const token = await user.getResetToken();
-    console.log(token);
+    
     await user.save({ validateBeforeSave: true });
 
     const generateLinkToSend = `${req.protocol}://${req.get(
@@ -131,7 +131,7 @@ const resetPassword = async (req, res) => {
   try {
     const { token } = req.params;
     const { password, confirmPassword } = req.body;
-    console.log(password, confirmPassword, token);
+    
     const resetPasswordToken = crypto
       .createHash("sha256")
       .update(token)

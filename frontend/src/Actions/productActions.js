@@ -33,14 +33,14 @@ export const getAllProducts =
   (keyword = "", page = 1, price = [0, 75000], category, rating = 0) =>
   async (dispatch) => {
     try {
-      console.log(keyword);
+      
       dispatch({ type: ALL_PRODUCTS_PROCESS });
       let link = `/api/v1/product?keyword=${keyword}&page=${page}&price[gte]=${price[0]}&price[lte]=${price[1]}&rating[gte]=${rating}`;
       if (category) {
         link = `/api/v1/product?keyword=${keyword}&page=${page}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}&rating[gte]=${rating}`;
       }
       const res = await axios.get(link);
-      console.log(res);
+      
       dispatch({ type: ALL_PRODUCTS_SUCCESS, payload: res?.data });
     } catch (error) {
       dispatch({
@@ -54,7 +54,7 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: GET_PRODUCT_DETAILS_PROCESS });
     const res = await axios.get(`/api/v1/product/${id}`);
-    console.log(res);
+   
 
     dispatch({ type: GET_PRODUCT_DETAILS_SUCCESS, payload: res.data?.product });
   } catch (error) {
@@ -69,7 +69,7 @@ export const submitReviewAction = (review) => async (dispatch) => {
   try {
     dispatch({ type: SUBMIT_REVIEW_PROCESS });
     const res = await axios.post("/api/v1/product/review", review);
-    console.log(res);
+    
 
     dispatch({ type: SUBMIT_REVIEW_SUCCESS, payload: res.data?.product });
   } catch (error) {
@@ -142,7 +142,7 @@ export const getSingleProductAction = (id) => async (dispatch) => {
   try {
     dispatch({ type: GET_SINGLE_PRODUCT_PROCESS });
     const res = await axios.get(`/api/v1/product/${id}`);
-    console.log(res);
+    
 
     dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: res.data?.product });
   } catch (error) {

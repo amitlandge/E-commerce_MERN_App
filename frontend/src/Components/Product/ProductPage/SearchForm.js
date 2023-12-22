@@ -6,7 +6,7 @@ const SearchForm = () => {
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
   const searchProductHandler = (e) => {
-    console.log("enter");
+    
     e.preventDefault();
     if (keyword.trim().length > 0) {
       navigate(`/products/${keyword}`);

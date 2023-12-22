@@ -24,7 +24,7 @@ const Products = () => {
     products,
     loading,
     error,
-    // productsCount,
+    
     resultPerPage,
     filteredProductsCount,
   } = useSelector((state) => state.products);
@@ -35,7 +35,7 @@ const Products = () => {
       dispatch(clearErrors());
     }
     dispatch(getAllProducts("", page, price, category, rating));
-    // eslint-disable-next-line
+    
   }, [dispatch, page, price, category, rating, error]);
   if (error) {
     toast.error(error);
@@ -61,14 +61,14 @@ const Products = () => {
   };
   const filterPriceHandler = (e, value) => {
     setPrice(value);
-    console.log(value);
+   
   };
   const ratingHandler = (e, value) => {
-    console.log(value);
+    
     setRatings(value);
   };
 
-  // console.log(Math.ceil(products.length / resultPerPage) );
+  
   return (
     <div className="product-container-box">
       <h1 className="product-container-heading">Products Features</h1>

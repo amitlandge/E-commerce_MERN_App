@@ -20,8 +20,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 
-
-
 function Header() {
   const dispatch = useDispatch();
   const { isAuthenticated, error, user } = useSelector(
@@ -142,6 +140,34 @@ function Header() {
                   Products
                 </Link>
               </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "black",
+                    display: "block",
+                  }}
+                  to="/aboutus"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
+                  About Us
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Link
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "black",
+                    display: "block",
+                  }}
+                  to="/contactus"
+                  style={{ color: "black", textDecoration: "none" }}
+                >
+                  Contact Us
+                </Link>
+              </MenuItem>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -202,6 +228,48 @@ function Header() {
                 style={{ color: "white", textDecoration: "none" }}
               >
                 Products
+              </Link>
+            </Button>
+
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+              }}
+            >
+              <Link
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
+                to="/aboutus"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                About Us
+              </Link>
+            </Button>
+
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+              }}
+            >
+              <Link
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
+                to="/contactus"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                Contact Us
               </Link>
             </Button>
           </Box>

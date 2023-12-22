@@ -15,8 +15,10 @@ const {
 } = require("../controllers/userController");
 const auth = require("../middleware/auth");
 const isAdmin = require("../middleware/isAdmin");
+const { createContact } = require("../controllers/contactController");
 const router = express.Router();
 router.post("/register", register);
+router.post("/contact", createContact);
 router.post("/login", login);
 router.get("/logout", logout);
 router.post("/password/forgot", forgotPassword);

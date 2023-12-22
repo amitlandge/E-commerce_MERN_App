@@ -36,6 +36,9 @@ import {
   DELETE_USER_PROCESS,
   DELETE_USER_SUCCESS,
   DELETE_USER_FAIL,
+  CONTACTUS_PROCESS,
+  CONTACTUS_SUCCESS,
+  CONTACTUS_FAIL,
 } from "../Constants/userConstants";
 
 export const loginUser = (email, password) => async (dispatch) => {
@@ -66,10 +69,10 @@ export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_USER_PROCESS });
     const res = await axios.get("/api/v1/me");
-    console.log(res);
+    
     dispatch({ type: LOAD_USER_SUCCESS, payload: res.data });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     dispatch({ type: LOAD_USER_FAIL, payload: error.response.data?.message });
   }
 };
@@ -151,7 +154,7 @@ export const getAllUsersAction = () => async (dispatch) => {
     dispatch({ type: GET_ALL_USERS_PROCESS });
 
     const res = await axios.get("/api/v1/admin/allUser");
-    console.log(res);
+  
     dispatch({ type: GET_ALL_USERS_SUCCESS, payload: res.data });
   } catch (error) {
     dispatch({
@@ -166,7 +169,7 @@ export const getSingleUserAction = (id) => async (dispatch) => {
     dispatch({ type: GET_SINGLE_USER_PROCESS });
 
     const res = await axios.get(`/api/v1/admin/user/${id}`);
-    console.log(res);
+  
     dispatch({ type: GET_SINGLE_USER_SUCCESS, payload: res.data });
   } catch (error) {
     dispatch({
@@ -180,7 +183,7 @@ export const updateUserStatusAction = (id, data) => async (dispatch) => {
     dispatch({ type: UPDATE_USER_STATUS_PROCESS });
 
     const res = await axios.put(`/api/v1/admin/user/${id}`, data);
-    console.log(res);
+   
     dispatch({ type: UPDATE_USER_STATUS_SUCCESS, payload: res.data });
   } catch (error) {
     dispatch({
@@ -195,13 +198,23 @@ export const deleteUserAction = (id) => async (dispatch) => {
     dispatch({ type: DELETE_USER_PROCESS });
 
     const res = await axios.delete(`/api/v1/admin/user/${id}`);
-    console.log(res);
+    
     dispatch({ type: DELETE_USER_SUCCESS, payload: res.data });
   } catch (error) {
     dispatch({
       type: DELETE_USER_FAIL,
       payload: error.response.data.message,
     });
+  }
+};
+
+export const contactUsAction = (formData) => async (dispatch) => {
+  try {
+    dispatch({ type: CONTACTUS_PROCESS });
+    const res = await axios.post("/api/v1/contact", formData);
+    dispatch({ type: CONTACTUS_SUCCESS, payload: res.data });
+  } catch (error) {
+    dispatch({ type: CONTACTUS_FAIL, payload: error.response.data.message });
   }
 };
 

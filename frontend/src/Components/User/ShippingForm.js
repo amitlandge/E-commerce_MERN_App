@@ -26,7 +26,7 @@ const ShippingForm = () => {
   const submitAddressData = (e) => {
     e.preventDefault();
     const phoneValidation = phone && phone.length === 10;
-    console.log(phoneValidation);
+
     if (!phoneValidation) {
       toast.error("Phone Number Must be 10 Digit");
     }
@@ -45,7 +45,6 @@ const ShippingForm = () => {
     setState(e.target.value);
   };
   const getCountryHandler = (e) => {
-    console.log(e.target.value);
     setCountry(e.target.value);
   };
   return (

@@ -1,0 +1,23 @@
+.aboutus-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1vmax;
+  margin: 3% auto;
+}
+.aboutus-image {
+  width: 25vmax;
+  height: 25vmax;
+  border-radius: 50%;
+}
+.aboutus-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1vmax;
+  margin: 2% auto;
+}
+.aboutus-links > button {
+  display: flex;
+  gap: 0.5vmax;
+}

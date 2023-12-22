@@ -45,6 +45,10 @@ import {
   DELETE_USER_SUCCESS,
   DELETE_USER_FAIL,
   DELETE_USER_RESET,
+  CONTACTUS_PROCESS,
+  CONTACTUS_SUCCESS,
+  CONTACTUS_FAIL,
+  CONTACTUS_RESET,
 } from "../Constants/userConstants";
 
 export const userLoginRegister = (state = { user: {} }, action) => {
@@ -347,6 +351,43 @@ export const deleteReviewReducer = (state = {}, action) => {
         success: false,
       };
 
+    case CLEAR_ERROR:
+      return {
+        ...state,
+        error: null,
+      };
+    default:
+      return state;
+  }
+};
+
+export const contactUsReducer = (state = { contact: {} }, action) => {
+  switch (action.type) {
+    case CONTACTUS_PROCESS:
+      return {
+        loading: true,
+        ...state,
+      };
+    case CONTACTUS_SUCCESS:
+      return {
+        loading: false,
+        success: action.payload.success,
+        contact: action.payload.contact,
+      };
+
+    case CONTACTUS_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    case CONTACTUS_RESET:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        success: false,
+      };
     case CLEAR_ERROR:
       return {
         ...state,

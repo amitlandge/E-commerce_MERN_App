@@ -41,6 +41,8 @@ import Users from "./Components/Admin/Users";
 import UpdateUser from "./Components/Admin/UpdateUser";
 import NoFound from "./Components/Layout/NoFound";
 import { useSelector } from "react-redux";
+import AboutUs from "./Components/Layout/AboutUs";
+import ContactUs from "./Components/Layout/ContactUs";
 
 function App() {
   const [stripeKey, setStripeKey] = useState();
@@ -75,7 +77,8 @@ function App() {
           <Route path="/products" element={<ProductPage />} />
           <Route path="/product/search" element={<SearchForm />} />
           <Route path="/products/:keyword" element={<ProductPage />} />
-
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contactus" element={<ContactUs />} />
           <Route path="/auth/login" element={<LoginForm />} />
           <Route path="/auth/signup" element={<SignUpForm />} />
           <Route path="/auth/" element={<PrivateRoutes />}>

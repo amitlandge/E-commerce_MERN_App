@@ -14,10 +14,10 @@ const ProductItems = ({
   description,
   price,
   rating,
-  reviews,
+  
   id,
   image,
-  numberOfReviews,
+  
 }) => {
   console.log(image);
 

@@ -18,7 +18,7 @@ export const addToCartAction = (id, quantity) => async (dispatch, getState) => {
       quantity,
     },
   });
-  console.log(getState());
+ 
   localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 };
 
@@ -29,7 +29,7 @@ export const removeToCartAction =
       type: REMOVE_TO_CART_SUCCESS,
       payload: data.product._id,
     });
-    console.log(getState());
+   
     localStorage.setItem(
       "cartItems",
       JSON.stringify(getState().cart.cartItems)

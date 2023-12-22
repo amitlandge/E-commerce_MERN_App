@@ -15,7 +15,7 @@ const ProductPage = () => {
   const param = useParams();
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
-  const { products, error, loading, productsCount, resultPerPage } =
+  const { products, error, loading, productsCount, resultPerPage,filteredProductsCount } =
     useSelector((state) => state.products);
   useEffect(() => {
     if (error) {
@@ -72,7 +72,7 @@ const ProductPage = () => {
           }}
         >
           <Pagination
-            count={Math.ceil(productsCount / resultPerPage)}
+            count={Math.ceil(filteredProductsCount / resultPerPage)}
             page={page}
             onChange={handleChange}
             variant="outlined"

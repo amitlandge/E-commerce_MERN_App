@@ -78,7 +78,7 @@ const Dashboard = () => {
       <div className="chart">
         <Line data={lineState} />
       </div>
-      <div className="doughnut">{/* <Doughnut data={doughnutState} /> */}</div>
+     
     </div>
   );
 };
