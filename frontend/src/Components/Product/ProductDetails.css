@@ -1,6 +1,6 @@
 .productDetails-container {
   width: 100vw;
-  /* height: 70vh; */
+
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -12,10 +12,7 @@
 .left-container {
   width: 25vmax;
 }
-/* .image-container {
-  width: 20vmax;
-  height: 80vh;
-} */
+
 .carouselImage {
   width: 30vmax;
   height: 60vh;
@@ -106,9 +103,13 @@ button {
   align-items: center;
   gap: 1vmax;
 }
+
+
+
 @media screen and (max-width: 700px) {
+
   .left-container {
-    width: 80vmax;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;

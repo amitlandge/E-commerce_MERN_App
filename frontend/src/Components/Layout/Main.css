@@ -1,26 +1,87 @@
 @import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600&display=swap");
-.main-page {
-  width: 100vw;
-  height: 50vmax;
 
+.logo img {
+  width: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.burger-menu {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+}
+
+.hero {
+  height: 70vh;
   background-image: linear-gradient(
       to top,
-      rgba(18, 18, 18, 0.3),
-      rgba(23, 22, 22, 0.1) 60%
+      rgba(18, 18, 18, 0.5),
+      rgba(23, 22, 22, 0) 60%
     ),
-    url("../../images//main.jpg");
+    url("../../images/main.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-size: 100%;
-}
-.heading-main {
-  font-family: "Signika Negative", sans-serif;
-  font-weight: 600;
-  font-size: 5vmax !important;
-  color: #2a3239;
-}
-.headerContainer {
-  width: 60%;
-  padding: 10% 5%;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
 }
 
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 600;
+  font-size: 4vmax !important;
+  color: #273443;
+}
+
+.hero p {
+  font-size: 1.2vmax !important;
+  margin-bottom: 30px;
+}
+
+.shop-now-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.shop-now-btn:hover {
+  background-color: #2980b9;
+}

@@ -14,7 +14,7 @@
 
   justify-content: space-around;
   margin: 0% auto;
-  /* gap: 5vmax; */
+
   flex-direction: row-reverse;
 }
 .product-main-container {
@@ -26,7 +26,7 @@
   margin: 5% auto;
 }
 .filter-container {
-  width: 20vmax;
+  width: 18vmax;
   padding: 2vmax;
 }
 @media only screen and (max-width: 700px) {
@@ -39,6 +39,9 @@
   }
   .product-flex {
     width: 150%;
+  }
+  .filter-container {
+    width: 50%;
   }
 }
 

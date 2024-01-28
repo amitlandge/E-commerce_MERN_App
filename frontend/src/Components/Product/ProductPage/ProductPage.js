@@ -11,12 +11,19 @@ import { clearErrors } from "../../../Actions/productActions";
 import { useParams } from "react-router-dom";
 
 import NoProducts from "../../Layout/NoProducts";
+import MetaData from "../../Layout/MetaData";
 const ProductPage = () => {
   const param = useParams();
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
-  const { products, error, loading, productsCount, resultPerPage,filteredProductsCount } =
-    useSelector((state) => state.products);
+  const {
+    products,
+    error,
+    loading,
+    productsCount,
+    resultPerPage,
+    filteredProductsCount,
+  } = useSelector((state) => state.products);
   useEffect(() => {
     if (error) {
       toast.error(error);
@@ -48,6 +55,7 @@ const ProductPage = () => {
   return (
     <div>
       <h1 className="product-container-heading">Products</h1>
+      <MetaData title="Products" />
       <div className="product-container">
         {loading ? (
           <Loader />

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { contactUsAction } from "../../Actions/userActions";
 import { CONTACTUS_RESET } from "../../Constants/userConstants";
 import Loader from "./Loader";
+import MetaData from "./MetaData";
 const ContactUs = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
@@ -38,6 +39,7 @@ const ContactUs = () => {
   }, [error, success, dispatch]);
   return (
     <Fragment>
+      <MetaData title="Contact Us" />
       {loading ? (
         <Loader />
       ) : (

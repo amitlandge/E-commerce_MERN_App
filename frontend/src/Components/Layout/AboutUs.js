@@ -1,11 +1,13 @@
-import { GitHub, Instagram } from "@mui/icons-material";
+import { GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Aboutus.css";
+import MetaData from "./MetaData";
 const AboutUs = () => {
   return (
     <div>
+      <MetaData title="About Us" />
       <div className="aboutus-container">
         <div>
           <img
@@ -31,6 +33,16 @@ const AboutUs = () => {
               style={{ color: "white" }}
             >
               GitHub
+            </Link>
+          </Button>
+          <Button variant="contained">
+            <LinkedIn />
+            <Link
+              to="https://www.linkedin.com/in/amit-landge-a28159249"
+              target="_blank"
+              style={{ color: "white" }}
+            >
+              Linkdin
             </Link>
           </Button>
         </div>

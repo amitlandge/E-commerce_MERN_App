@@ -60,10 +60,10 @@ function Header() {
   // console.log(user.avatar.url);
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <ShoppingCartIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            sx={{ display: { xs: "none", md: "flex" }, mr: 0 }}
           />
           <Typography
             variant="h6"

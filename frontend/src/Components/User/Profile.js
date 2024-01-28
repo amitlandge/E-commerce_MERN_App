@@ -9,6 +9,7 @@ import Loader from "../Layout/Loader";
 import { useNavigate } from "react-router-dom";
 import { Fragment } from "react";
 import { Button } from "@mui/material";
+import MetaData from "../Layout/MetaData";
 const Profile = () => {
   const navigate = useNavigate();
   const date = new Date().toJSON().substring(0, 10);
@@ -25,6 +26,7 @@ const Profile = () => {
   }, [error, isAuthenticated, navigate]);
   return (
     <Fragment>
+      <MetaData title="Your Profile" />
       {loading ? (
         <Loader />
       ) : (

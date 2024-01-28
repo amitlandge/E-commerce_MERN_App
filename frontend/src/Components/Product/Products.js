@@ -13,6 +13,7 @@ import Box from "@mui/material/Box";
 import { List } from "@mui/material";
 import NoProducts from "../Layout/NoProducts";
 
+
 const CategoryArray = ["Mobile", "Electronic", "Accessories", "Other"];
 const Products = () => {
   const [category, setCategory] = useState("");
@@ -71,12 +72,13 @@ const Products = () => {
   
   return (
     <div className="product-container-box">
+    
       <h1 className="product-container-heading">Products Features</h1>
       <div className="product-container">
         {loading ? (
           <Loader />
         ) : (
-          <div className="product-main-container">
+          <div className="card-section">
             {products && products.length !== 0 ? (
               productContent
             ) : (
