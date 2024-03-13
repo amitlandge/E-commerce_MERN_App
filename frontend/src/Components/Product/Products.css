@@ -5,20 +5,20 @@
   padding: 1vmax 0vmax;
   border-bottom: 2px solid gray;
   margin: 2% auto;
-  color: rgb(53, 48, 48);
+  color: rgb(48, 48, 53);
   font-size: 2vmax;
+  font-family: "Kalam", cursive;
+  font-weight: 700;
 }
 .product-container {
   width: 90vw;
   display: flex;
-
   justify-content: space-around;
   margin: 0% auto;
-
   flex-direction: row-reverse;
 }
 .product-main-container {
-  width: 70vmax;
+  width: 70vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -26,27 +26,26 @@
   margin: 5% auto;
 }
 .filter-container {
-  width: 18vmax;
+  width: 20vmax;
   padding: 2vmax;
 }
 @media only screen and (max-width: 700px) {
-  .product-main-container {
-    display: flex;
-
-    flex-direction: column !important;
-    justify-content: center;
-    align-items: center;
-  }
-  .product-flex {
-    width: 150%;
-  }
-  .filter-container {
-    width: 50%;
+  .product-container {
+    flex-direction: column-reverse !important;
   }
 }
 
 @media only screen and (max-width: 1000px) {
+  .product-main-container {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
   .product-container {
-    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse !important;
+
+    justify-content: center;
+    align-items: center;
   }
 }

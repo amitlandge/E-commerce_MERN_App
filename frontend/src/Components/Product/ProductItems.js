@@ -11,7 +11,7 @@ import { Card, Rating, Typography } from "@mui/material";
 
 const ProductItems = ({
   name,
-  description,
+  
   price,
   rating,
   numberOfReviews,
@@ -28,7 +28,7 @@ const ProductItems = ({
             src={image[0].url}
             alt="Product "
             className="cardImage"
-            height="250px"
+            // height="25vmax"
           />
 
           <div class="card-content">

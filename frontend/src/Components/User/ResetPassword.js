@@ -14,7 +14,12 @@ const ResetPassword = () => {
   const params = useParams();
   const changePasswordHandler = (e) => {
     e.preventDefault();
- 
+    const passwordLength = password.trim().length === 8;
+    const confirmPasswordLength = confirmPassword.trim().length === 8;
+    if (!passwordLength && !confirmPasswordLength) {
+      toast.error("Password Must Be 8 Character");
+    }
+
     dispatch(forgotPasswordAction(password, confirmPassword, params.token));
   };
   useEffect(() => {

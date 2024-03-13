@@ -45,17 +45,21 @@ const Cart = () => {
   return (
     <div>
       <Fragment>
+        <h1 className="headline">Cart</h1>
+        <hr></hr>
         {cartItems.length !== 0 ? (
           <div className="cart">
             {cartItems &&
               cartItems.map((item) => {
                 return (
-                  <Card className="cart-flex"
+                  <Card
+                    className="cart-flex"
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      gap: "2vmax",
+                      gap: "3vmax",
                       flexWrap: "wrap",
+                      padding: "1vmax 3vmax",
                     }}
                   >
                     <CardMedia
@@ -69,7 +73,14 @@ const Cart = () => {
                         flexDirection: "column",
                       }}
                     >
-                      <CardContent sx={{ flex: "1 0 auto" }}>
+                      <CardContent
+                        sx={{
+                          flex: "1 0 auto",
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "1vmax",
+                        }}
+                      >
                         <Typography component="div" variant="h5">
                           {item.name}
                         </Typography>

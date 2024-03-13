@@ -53,7 +53,7 @@ const ShippingForm = () => {
         <ProgressBar value={20} />
       </div>
       <form onSubmit={submitAddressData} className="form">
-        <h1>Shipping Info</h1>
+        <h1 className="headline">Shipping Info</h1>
         <div>
           <TextField
             id="outlined-required"

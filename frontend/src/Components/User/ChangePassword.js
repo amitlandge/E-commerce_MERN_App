@@ -17,7 +17,13 @@ const ChangePassword = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const changePasswordHandler = (e) => {
+    const oldPasswordLength = oldPassword.trim().length === 8;
+    const newPasswordLength = newPassword.trim().length === 8;
+    const confirmPasswordLength = confirmPassword.trim().length === 8;
     e.preventDefault();
+    if (!oldPasswordLength && !newPasswordLength && !confirmPasswordLength) {
+      toast.error("Password Must be 8 Character");
+    }
     if (!oldPassword && !newPassword && !confirmPassword) {
       toast.error("Please Fill All Information");
     }

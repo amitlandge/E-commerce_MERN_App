@@ -55,7 +55,7 @@ const Dashboard = () => {
       <Sidebar />
       <Divider />
       <div className="dashboard_container">
-        <h2>Dashboard</h2>
+        <h2 className="headline">Dashboard</h2>
         <div className="totalAmount">
           <h3>Total Amount</h3>
           <p>{total} Rs</p>

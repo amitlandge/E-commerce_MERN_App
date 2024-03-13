@@ -60,22 +60,24 @@ function Header() {
   // console.log(user.avatar.url);
   return (
     <AppBar position="static">
-      <Container maxWidth="xl" >
+      <Container
+        maxWidth="xl"
+        style={{ fontFamily: "Inter, sans-serif", letterSpacing: "1px" }}
+      >
         <Toolbar disableGutters>
           <ShoppingCartIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 0 }}
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
           />
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 500,
+              letterSpacing: "1.5px",
               color: "inherit",
               textDecoration: "none",
             }}
@@ -179,9 +181,9 @@ function Header() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 500,
+              letterSpacing: "1.5px",
               color: "inherit",
               textDecoration: "none",
             }}
@@ -204,7 +206,11 @@ function Header() {
                   display: "block",
                 }}
                 to="/"
-                style={{ color: "white", textDecoration: "none" }}
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  marginRight: "1vmax",
+                }}
               >
                 Home
               </Link>
@@ -225,7 +231,11 @@ function Header() {
                   display: "block",
                 }}
                 to="/products"
-                style={{ color: "white", textDecoration: "none" }}
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  marginRight: "1vmax",
+                }}
               >
                 Products
               </Link>
@@ -246,7 +256,11 @@ function Header() {
                   display: "block",
                 }}
                 to="/aboutus"
-                style={{ color: "white", textDecoration: "none" }}
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  marginRight: "1vmax",
+                }}
               >
                 About Us
               </Link>
@@ -267,7 +281,11 @@ function Header() {
                   display: "block",
                 }}
                 to="/contactus"
-                style={{ color: "white", textDecoration: "none" }}
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  marginRight: "1vmax",
+                }}
               >
                 Contact Us
               </Link>

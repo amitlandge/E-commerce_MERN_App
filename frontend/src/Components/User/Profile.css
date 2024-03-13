@@ -22,9 +22,10 @@
   gap: 3vmax;
 }
 .profile-image-container > img {
-  width: 25vmax;
-  height: 25vmax;
+  width: 20vmax;
+  height: 20vmax;
   border-radius: 50%;
+ 
 }
 .profile-description {
   width: 40vmax;

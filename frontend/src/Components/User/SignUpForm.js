@@ -69,7 +69,7 @@ try {
         <Loader />
       ) : (
         <form onSubmit={submitUserData} className="form">
-          <h1>Register</h1>
+          <h1 className="headline">Register</h1>
           <div
             className={
               validation.name && submit ? "name-field" : "name-field invalid"

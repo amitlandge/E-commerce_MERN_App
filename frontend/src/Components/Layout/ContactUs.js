@@ -44,7 +44,7 @@ const ContactUs = () => {
         <Loader />
       ) : (
         <form className="contactus" onSubmit={submitContactHandler}>
-          <h2>Contact Us</h2>
+          <h2 className="headline">Contact Us</h2>
           <TextField
             id="outlined-basic"
             label="Email"

@@ -1,6 +1,5 @@
 .card-section {
   display: flex;
-
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
@@ -12,9 +11,10 @@
   width: 15vmax;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+  padding-top: 1.2vmax;
 }
 
 .card:hover {
@@ -41,6 +41,9 @@
   color: #333;
   font-size: 1.25rem;
 }
+.cardImage {
+  height: 14vmax;
+}
 
 @media screen and (max-width: 1100px) {
   .card {
@@ -57,6 +60,9 @@
     flex-direction: column;
   }
   .card {
-    width: 100%;
+    width: 50vw;
+  }
+  .cardImage {
+    height: auto !important;
   }
 }

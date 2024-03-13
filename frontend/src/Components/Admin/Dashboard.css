@@ -20,6 +20,7 @@
 }
 .data {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   margin-top: 5vmax;
@@ -36,6 +37,12 @@
   align-items: center;
   color: aliceblue;
   border-radius: 50%;
+}
+.data > * > h3 {
+  font-size: 2.5vmax;
+}
+.data > * > p {
+  font-size: 2vmax;
 }
 .chart {
   width: 70vw;

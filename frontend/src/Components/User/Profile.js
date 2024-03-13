@@ -31,7 +31,7 @@ const Profile = () => {
         <Loader />
       ) : (
         <div>
-          <h1 className="profile-heading">My Profile</h1>
+          <h1 className="profile-heading headline">My Profile</h1>
           <div className="profile-container">
             <div className="profile-image-container">
               <img

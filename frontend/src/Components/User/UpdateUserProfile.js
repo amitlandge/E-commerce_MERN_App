@@ -61,7 +61,7 @@ const UpdateUserProfile = () => {
         <Loader />
       ) : (
         <div>
-          <h1>Update Profile</h1>
+          <h1 className="headline">Update Profile</h1>
           <form className="form" onSubmit={updateProfileHandler}>
             <div className="profile-image">
               <img src={user && user.avatar.url} alt={user.name} />

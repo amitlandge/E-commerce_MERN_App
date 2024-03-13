@@ -33,15 +33,15 @@ nav {
 }
 
 main {
-  padding: 20px;
+  padding: 2vmax;
 }
 
 .hero {
   height: 70vh;
   background-image: linear-gradient(
       to top,
-      rgba(18, 18, 18, 0.5),
-      rgba(23, 22, 22, 0) 60%
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.8)
     ),
     url("../../images/main.jpg");
   background-repeat: no-repeat;
@@ -58,11 +58,11 @@ main {
 }
 
 .hero h1 {
-  margin-bottom: 20px;
-  font-family: "Signika Negative", sans-serif;
-  font-weight: 600;
-  font-size: 4vmax !important;
-  color: #273443;
+  margin-bottom: 2vmax;
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  font-size: 5vmax !important;
+  text-shadow: 0px 4px 6px rgba(16, 15, 15, 0.4);
 }
 
 .hero p {

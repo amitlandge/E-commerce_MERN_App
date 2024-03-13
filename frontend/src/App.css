@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kalam:wght@300;400;700&display=swap");
 * {
   margin: 0%;
   padding: 0%;
-  font-family: "Poppins", sans-serif;
+
+  font-family: "Inter", sans-serif;
 }
 .searchBar {
   width: 25vmax;
@@ -42,6 +45,12 @@ input::-webkit-inner-spin-button {
   background-color: #1976d2;
   color: aliceblue;
   cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .search-form {
+    flex-direction: column;
+    gap: 2vmax;
+  }
 }
 .profile-image > img {
   width: 10vmax;
@@ -90,6 +99,14 @@ h3 {
 }
 p {
   font-size: 1vmax;
+}
+.headline {
+  text-align: center;
+  font-family: "Kalam", cursive;
+  font-weight: 600;
+}
+input:focus-visible {
+  background-color: white !important;
 }
 
 @media screen and (max-width: 650px) {

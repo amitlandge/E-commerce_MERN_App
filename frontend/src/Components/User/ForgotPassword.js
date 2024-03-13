@@ -41,7 +41,6 @@ const ForgotPassword = () => {
               setEmail(e.target.value);
             }}
           />
-          <span>Password must be above 8 Character</span>
         </div>
         <Button variant="contained" type="submit">
           Send Email

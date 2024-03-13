@@ -104,12 +104,19 @@ const AllOrders = () => {
         ) : (
           <div className="myOrdersPage">
             <DataGrid
-              rows={rows}
-              columns={columns}
-              pageSize={10}
-              disableSelectionOnClick
-              className="myOrdersTable"
-              autoHeight
+               rows={rows}
+               columns={columns}
+               initialState={{
+                 pagination: {
+                   paginationModel: {
+                     pageSize: 8,
+                   },
+                 },
+               }}
+               pageSizeOptions={[8]}
+               checkboxSelection
+               disableRowSelectionOnClick
+             
             />
 
             <Typography id="myOrdersHeading">{user.name}'s Orders</Typography>

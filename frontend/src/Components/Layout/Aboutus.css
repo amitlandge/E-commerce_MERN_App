@@ -21,3 +21,34 @@
   display: flex;
   gap: 0.5vmax;
 }
+
+.about-us-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-us-container h2 {
+  color: #333;
+}
+
+.about-us-container p {
+  line-height: 1.6;
+}
+
+.about-us-container h3 {
+  color: #555;
+}
+
+.about-us-container ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.about-us-container li {
+  margin-bottom: 10px;
+}
+
+.about-us-container strong {
+  font-weight: bold;
+}

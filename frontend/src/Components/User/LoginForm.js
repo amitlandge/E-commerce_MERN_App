@@ -26,7 +26,7 @@ const LoginForm = () => {
 
   const isEmailValid = email.trim().includes("@");
 
-  const isPasswordValid = password.trim().length >= 8;
+  const isPasswordValid = password.trim().length === 8;
   const submitUserData = (event) => {
     event.preventDefault();
     setSubmit(true);
@@ -56,7 +56,7 @@ const LoginForm = () => {
         <Loader />
       ) : (
         <form onSubmit={submitUserData} className="form">
-          <h1> User Login</h1>
+          <h1 className="headline"> User Login</h1>
 
           <div
             className={
@@ -94,7 +94,7 @@ const LoginForm = () => {
                 setPassword(e.target.value);
               }}
             />
-            <span>Password must be above 8 Character</span>
+            <span>Password must be 8 Character</span>
           </div>
           <Link className="forgot-password" to="/auth/forgot/password">
             Forgot Password
