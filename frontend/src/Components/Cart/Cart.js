@@ -16,6 +16,7 @@ import { Delete } from "@mui/icons-material";
 
 const Cart = () => {
   const { cartItems } = useSelector((state) => state.cart);
+  console.log(cartItems);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const addQuantityHandler = (id, quantity, stock) => {
@@ -47,7 +48,7 @@ const Cart = () => {
       <Fragment>
         <h1 className="headline">Cart</h1>
         <hr></hr>
-        {cartItems.length !== 0 ? (
+        {cartItems?.length !== 0 ? (
           <div className="cart">
             {cartItems &&
               cartItems.map((item) => {
@@ -178,7 +179,7 @@ const Cart = () => {
         )}
       </Fragment>
 
-      {cartItems.length > 0 && (
+      {cartItems?.length > 0 && (
         <h1 className="total-amount">
           Total Amount :
           {` ₹${cartItems.reduce(
@@ -189,7 +190,7 @@ const Cart = () => {
       )}
 
       <div className="order">
-        {cartItems.length > 0 && (
+        {cartItems?.length > 0 && (
           <Button
             variant="contained"
             type="submit"

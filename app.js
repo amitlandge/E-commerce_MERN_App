@@ -5,6 +5,7 @@ const path = require("path");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 const fileUpload = require("express-fileupload");
 const bodyParser = require("body-parser");
@@ -31,7 +32,7 @@ app.use("/api/v1/", productRoutes);
 app.use("/api/v1/", userRoutes);
 app.use("/api/v1/", orderRoutes);
 app.use("/api/v1/", paymentRoutes);
-
+app.use("/api/v1/", cartRoutes);
 app.use(express.static(path.join(__dirname, "./frontend/build")));
 app.get("*", (req, res) => {
   res.setHeader("Content-Type", "application/json");

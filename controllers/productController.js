@@ -3,24 +3,28 @@ const ApiFeatures = require("../utils/apiFeatures");
 const cloudinary = require("cloudinary");
 const getAllProducts = async (req, res) => {
   try {
-    
-    let resultPerPage = 6;
-    let productsCount = await Product.countDocuments();
+    const resultPerPage = 6;
+    const productsCountQuery = new ApiFeatures(Product.find(), req.query)
+      .search()
+      .filter();
 
-    const apiRes = new ApiFeatures(Product.find(), req.query).search().filter();
+    const productsCount = await productsCountQuery.query.countDocuments();
 
+    const paginatedQuery = new ApiFeatures(Product.find(), req.query)
+      .search()
+      .filter()
+      .pagination(6);
 
-    apiRes.pagination(resultPerPage);
+    const paginatedProducts = await paginatedQuery.query;
 
-    let product = await apiRes.query;
-   
+    const totalPages = Math.ceil(productsCount / 6);
 
     res.status(200).json({
       message: "Get All Product Controller",
-      products: product,
+      products: paginatedProducts,
       resultPerPage,
-      productsCount,
-      
+      productsCount: productsCount,
+      totalPages,
     });
   } catch (error) {
     res.status(400).json({
@@ -30,21 +34,17 @@ const getAllProducts = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
-  
-
   try {
     let images = [];
     if (!req.files.image) {
       throw new Error("Please Insert Image");
     }
     if (req.files.image.length > 0) {
-      
       images.push(...req.files.image);
     } else {
-      
       images = [req.files.image];
     }
-   
+
     const imagesLinks = [];
 
     for (let i = 0; i < images.length; i++) {
@@ -76,31 +76,24 @@ const createProduct = async (req, res) => {
 };
 const updateProduct = async (req, res) => {
   try {
-   
     let product = await Product.findById(req.params.id);
     if (!product) {
       throw new Error("Product Not found");
     }
 
     if (req.files !== null) {
-      
       let images = [];
       if (req.files.image.length > 0) {
-       
         images.push(...req.files.image);
       } else {
-       
         images = [req.files.image];
       }
 
-      
       const imagesLinks = [];
-     
 
       if (images !== undefined) {
         // Deleting Images From Cloudinary
-        
-        
+
         for (let i = 0; i < product.image.length; i++) {
           await cloudinary.v2.uploader.destroy(product.image[i].public_id);
         }
@@ -112,7 +105,7 @@ const updateProduct = async (req, res) => {
               folder: "products",
             }
           );
-        
+
           imagesLinks.push({
             public_id: result.public_id,
             url: result.secure_url,
@@ -155,10 +148,7 @@ const deleteProduct = async (req, res) => {
 
     if (product) {
       for (const key in product.image) {
-        const result = await cloudinary.v2.uploader.destroy(
-          product.image[key].public_id
-        );
-        
+        await cloudinary.v2.uploader.destroy(product.image[key].public_id);
       }
     }
     product = await Product.findByIdAndDelete(req.params.id);
@@ -196,7 +186,6 @@ const adminAllProducts = async (req, res) => {
 };
 
 const reviewsProduct = async (req, res) => {
-  
   const { _id } = req.user;
   const { rating, comment, productId } = req.body;
   const product = await Product.findById(productId);
@@ -243,7 +232,6 @@ const getAllReviews = async (req, res) => {
   }
 };
 const deleteReview = async (req, res) => {
- 
   const product = await Product.findById(req.query.productId);
   if (product) {
     let review = product.reviews.filter((rev) => {

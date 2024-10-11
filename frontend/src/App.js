@@ -43,6 +43,7 @@ import NoFound from "./Components/Layout/NoFound";
 import { useSelector } from "react-redux";
 import AboutUs from "./Components/Layout/AboutUs";
 import ContactUs from "./Components/Layout/ContactUs";
+import { getAllCartItems } from "./Actions/cartAction";
 
 function App() {
   const [stripeKey, setStripeKey] = useState();
@@ -55,6 +56,7 @@ function App() {
 
   useEffect(() => {
     store.dispatch(loadUser());
+    store.dispatch(getAllCartItems());
     if (isAuthenticated) {
       getStripeKey();
     }

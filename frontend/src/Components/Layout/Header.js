@@ -396,7 +396,7 @@ function Header() {
                         setAnchorElUser(null);
                       }}
                     >
-                      Cart ({cartItems.length})
+                      Cart ({cartItems?.length})
                     </Link>
                   </MenuItem>
                 </>

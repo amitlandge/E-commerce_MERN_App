@@ -1,17 +1,12 @@
 import React from "react";
 import "./ProductItems.css";
 import { Link } from "react-router-dom";
-// import Card from "@mui/material/Card";
 
-// import CardContent from "@mui/material/CardContent";
-// import CardMedia from "@mui/material/CardMedia";
-
-// import Typography from "@mui/material/Typography";
 import { Card, Rating, Typography } from "@mui/material";
 
 const ProductItems = ({
   name,
-  
+
   price,
   rating,
   numberOfReviews,
@@ -24,12 +19,7 @@ const ProductItems = ({
     <Link className="product-cart" to={`/product/${id}`}>
       <Card>
         <div class="card">
-          <img
-            src={image[0].url}
-            alt="Product "
-            className="cardImage"
-            // height="25vmax"
-          />
+          <img src={image[0].url} alt="Product " className="cardImage" />
 
           <div class="card-content">
             <h2>{name}</h2>

@@ -13,7 +13,6 @@ import Box from "@mui/material/Box";
 import { List } from "@mui/material";
 import NoProducts from "../Layout/NoProducts";
 
-
 const CategoryArray = ["Mobile", "Electronic", "Accessories", "Other"];
 const Products = () => {
   const [category, setCategory] = useState("");
@@ -21,14 +20,9 @@ const Products = () => {
   const [page, setPage] = useState(1);
   const [price, setPrice] = useState([0, 75000]);
   const dispatch = useDispatch();
-  const {
-    products,
-    loading,
-    error,
-    
-    resultPerPage,
-    filteredProductsCount,
-  } = useSelector((state) => state.products);
+  const { products, loading, error, totalPages } = useSelector(
+    (state) => state.products
+  );
   console.log(products);
   useEffect(() => {
     if (error) {
@@ -36,7 +30,6 @@ const Products = () => {
       dispatch(clearErrors());
     }
     dispatch(getAllProducts("", page, price, category, rating));
-    
   }, [dispatch, page, price, category, rating, error]);
   if (error) {
     toast.error(error);
@@ -62,17 +55,14 @@ const Products = () => {
   };
   const filterPriceHandler = (e, value) => {
     setPrice(value);
-   
   };
   const ratingHandler = (e, value) => {
-    
     setRatings(value);
   };
+  console.log(totalPages);
 
-  
   return (
     <div className="product-container-box">
-    
       <h1 className="product-container-heading">Products Features</h1>
       <div className="product-container">
         {loading ? (
@@ -142,7 +132,7 @@ const Products = () => {
           }}
         >
           <Pagination
-            count={Math.ceil(filteredProductsCount / resultPerPage) + 1}
+            count={totalPages}
             page={page}
             onChange={handleChange}
             variant="outlined"
